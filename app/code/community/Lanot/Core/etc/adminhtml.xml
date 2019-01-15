@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento admin config
+ *
+ * @author Lanot
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <lanot_core translate="title" module="lanot_core">
+                                        <title>Lanot Default Settings</title>
+                                    </lanot_core>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

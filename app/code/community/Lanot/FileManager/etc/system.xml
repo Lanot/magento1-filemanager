@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <lanot translate="label">
+            <label>Lanot Extensions</label>
+            <sort_order>200</sort_order>
+        </lanot>
+    </tabs>
+    <sections>
+        <lanot_filemanager>
+            <class>separator-top</class>
+            <label>File Manager</label>
+            <tab>lanot</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1200</sort_order>
+            <show_in_default>1</show_in_default>
+            <groups>
+                <view translate="label">
+                    <label>File Manager Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <fields>
+                        <root_directory translate="label comment">
+                            <label>File Manager Root Directory</label>
+                            <comment>For Magento Root directory - leave this field empty</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </root_directory>
+                    </fields>
+                </view>
+            </groups>
+        </lanot_filemanager>
+    </sections>
+</config>

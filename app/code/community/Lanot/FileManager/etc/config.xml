@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+
+    <modules>
+        <Lanot_FileManager>
+            <version>2.0.0</version>
+        </Lanot_FileManager>
+    </modules>
+
+    <global>
+        <helpers>
+            <lanot_filemanager>
+                <class>Lanot_FileManager_Helper</class>
+            </lanot_filemanager>
+        </helpers>
+
+        <blocks>
+            <lanot_filemanager>
+                <class>Lanot_FileManager_Block</class>
+            </lanot_filemanager>
+        </blocks>
+
+        <models>
+            <lanot_filemanager>
+                <class>Lanot_FileManager_Model</class>
+            </lanot_filemanager>
+        </models>
+
+    </global>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <lanot_filemanager>
+                    <file>lanot_filemanager.xml</file>
+                </lanot_filemanager>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <lanot_filemanager>
+                <use>admin</use>
+                <args>
+                    <module>Lanot_FileManager</module>
+                    <frontName>lanot_filemanager</frontName>
+                </args>
+            </lanot_filemanager>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <lanot_filemanager>
+            <browser>
+                <dirs>
+                    <exclude/>
+                    <include/>
+                </dirs>
+                <extensions>
+                    <image_allowed>
+                        <jpg>1</jpg>
+                        <jpeg>1</jpeg>
+                        <png>1</png>
+                        <gif>1</gif>
+                    </image_allowed>
+
+                    <media_allowed>
+                        <flv>1</flv>
+                        <swf>1</swf>
+                        <avi>1</avi>
+                        <mov>1</mov>
+                        <rm>1</rm>
+                        <wmv>1</wmv>
+                    </media_allowed>
+                    <allowed/> <!-- all extensions are allowed -->
+                </extensions>
+                <resize_width>100</resize_width>
+                <resize_height>75</resize_height>
+            </browser>
+        </lanot_filemanager>
+    </adminhtml>
+
+    <default>
+        <lanot_filemanager>
+            <view>
+                <root_directory>media</root_directory>
+            </view>
+        </lanot_filemanager>
+    </default>
+
+</config>

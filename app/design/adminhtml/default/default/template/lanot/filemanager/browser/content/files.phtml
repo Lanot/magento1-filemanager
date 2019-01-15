@@ -1,0 +1,51 @@
+<?php
+/**
+ * Directory contents template for files and sub dirs
+ *
+ * @see Lanot_EasyFiles_Block_Adminhtml_Content_Files
+ */
+?>
+<?php
+$_width  = $this->getImagesWidth();
+$_height = $this->getImagesHeight();
+$_addFodlerJS = '';
+$isWritable = Mage::helper('lanot_filemanager/media')->getIsCurrentPathWritable();
+$noticeMsg = Mage::helper('lanot_filemanager')->__('The current folder is not writable. You do not have permissions for managing files here (only view).');
+if ($isWritable) {
+    $_addFodlerJS.= "MediabrowserInstance.showControls();";
+} else {
+    $_addFodlerJS.= "MediabrowserInstance.hideControls();";
+}
+?>
+<?php if (!$isWritable): ?>
+    <div><ul class="messages"><li class="notice-msg"><ul><li><span><?php echo $noticeMsg?></span></li></ul></li></ul></div>
+<?php endif;?>
+<?php if (($this->getFilesCount()== 0) && ($this->getDirsCount()== 0)): ?>
+    <?php echo $this->helper('cms')->__('No files found') ?>
+<?php endif; ?>
+<?php if ($this->getDirsCount() > 0): ?>
+    <?php foreach ($this->getDirs() as $dir):?>
+    <div class="filecnt folder" id="folder-<?php echo $this->getDirId($dir) ?>" name="<?php echo $dir->getBasename() ?>" title="<?php echo $this->getDirName($dir) ?>">
+        <p class="nm" style="height:<?php echo $_height ?>px;width:<?php echo $_width ?>px;">
+            <img src="<?php echo $this->getFolderThumbnail() ?>" alt="<?php echo $this->getDirName($dir) ?>"/>
+        </p>
+        <small><?php echo $this->getFileShortName($dir); ?></small>
+    </div>
+    <?php $_addFodlerJS.= "MediabrowserInstance.addFolder({id:'{$this->getDirId($dir)}', short_name: '{$this->getDirName($dir)}'});"; ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+<?php if ($this->getFilesCount() > 0): ?>
+    <?php foreach ($this->getFiles() as $file):?>
+    <div class="filecnt file" id="<?php echo $this->getFileId($file) ?>" title="<?php echo $file->getDownloadUrl() ?>" name="<?php echo $file->getBasename() ?>">
+        <p class="nm" style="height:<?php echo $_height ?>px;width:<?php echo $_width ?>px;">
+            <?php if($this->getFileThumbUrl($file)):?>
+            <img src="<?php echo $this->getFileThumbUrl($file) ?>" alt="<?php echo $this->getFileName($file) ?>"/>
+            <?php endif; ?>
+        </p>
+        <small><?php echo $this->getFileShortName($file); ?></small>
+    </div>
+    <?php endforeach; ?>
+<?php endif; ?>
+<?php if (!empty($_addFodlerJS)) : ?>
+    <script language="text/javascript"><?php echo $_addFodlerJS;?>MediabrowserInstance.expandCurrentFolder();</script>
+<?php endif; ?>

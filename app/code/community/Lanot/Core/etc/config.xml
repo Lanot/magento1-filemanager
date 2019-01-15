@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Lanot_Core>
+            <version>2.0.1</version>
+        </Lanot_Core>
+    </modules>
+
+    <global>
+        <helpers>
+            <lanot_core>
+                <class>Lanot_Core_Helper</class>
+            </lanot_core>
+        </helpers>
+        <blocks>
+            <lanot_core>
+                <class>Lanot_Core_Block</class>
+            </lanot_core>
+        </blocks>
+        <models>
+            <lanot_core>
+                <class>Lanot_Core_Model</class>
+            </lanot_core>
+        </models>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Lanot_Core before="Mage_Adminhtml">Lanot_Core</Lanot_Core>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <!-- translations -->
+        <translate>
+            <modules>
+                <Lanot_Core>
+                    <files>
+                        <default>Lanot_Core.csv</default>
+                    </files>
+                </Lanot_Core>
+            </modules>
+        </translate>
+        <!-- translations -->
+    </adminhtml>
+
+    <frontend>
+        <!-- translations -->
+        <translate>
+            <modules>
+                <Lanot_Core>
+                    <files>
+                        <default>Lanot_Core.csv</default>
+                    </files>
+                </Lanot_Core>
+            </modules>
+        </translate>
+        <!-- translations -->
+    </frontend>
+
+</config>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento backend layout
+ *
+ * @author Lanot
+ */
+-->
+<layout>
+    <lanot_filemanager_adminhtml_media_index>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="addCss"><name>lanot_filemanager.css</name></action>
+            <action method="addJs"><script>lanot/filemanager/browser.js</script></action>
+        </reference>
+        <reference name="left">
+            <block name="wysiwyg_images.js" type="lanot_filemanager/adminhtml_content" template="lanot/filemanager/browser/js.phtml" />
+            <block name="wysiwyg_images.tree" type="lanot_filemanager/adminhtml_tree" template="cms/browser/tree.phtml" />
+        </reference>
+        <reference name="content">
+            <block name="wysiwyg_images.content"  type="lanot_filemanager/adminhtml_content" template="cms/browser/content.phtml">
+                <block name="wysiwyg_images.uploader" type="lanot_filemanager/adminhtml_content_uploader" template="media/uploader.phtml">
+                    <block name="additional_scripts" type="core/template" template="cms/browser/content/uploader.phtml"/>
+                </block>
+                <block name="wysiwyg_images.newfolder" type="adminhtml/cms_wysiwyg_images_content_newfolder" template="cms/browser/content/newfolder.phtml" />
+            </block>
+        </reference>
+    </lanot_filemanager_adminhtml_media_index>
+
+    <lanot_filemanager_adminhtml_media_contents>
+        <block name="wysiwyg_images.files" type="lanot_filemanager/adminhtml_content_files" template="lanot/filemanager/browser/content/files.phtml" output="toHtml" />
+    </lanot_filemanager_adminhtml_media_contents>
+</layout>

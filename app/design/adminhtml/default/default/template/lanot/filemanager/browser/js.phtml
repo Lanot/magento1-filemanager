@@ -1,0 +1,20 @@
+<?php
+/**
+ * Main init template
+ *
+ * @see Lanot_EasyFiles_Block_Adminhtml_Content
+ */
+?>
+<script type="text/javascript">
+//<![CDATA[
+MediabrowserInstance = new Mediabrowser(<?php echo $this->getFilebrowserSetupObject() ?>);
+MediabrowserInstance.storeId = '<?php echo $this->getStoreId() ?>';
+MediabrowserInstance.copySelectedUrl = '<?php echo $this->getUrlCopySelected() ?>';
+MediabrowserInstance.renameSelectedUrl = '<?php echo $this->getUrlRenameSelected() ?>';
+MediabrowserInstance.renameSelectedErrorMessage = '<?php echo $this->getRenameSelectedErrorMessage() ?>';
+MediabrowserInstance.renameMessagePrompt = '<?php echo $this->getRenameMessage() ?>';
+MediabrowserInstance.deleteSelectedConfirmationMessage = '<?php echo $this->getDeleteConfirmationMessage() ?>';
+MediabrowserInstance.copySameFolderMessage = '<?php echo $this->getSameFolderMessage() ?>';
+MediabrowserInstance.pasteButtonMessage = '<?php echo $this->getPasteButtonMessage() ?>';
+//]]>
+</script>

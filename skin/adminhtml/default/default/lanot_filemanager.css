@@ -1,0 +1,9 @@
+.uploader .file-row { margin:16px 0; width:auto; }
+#contents-uploader { margin-bottom:10px; background:#d7e5ef; padding:5px 10px; }
+#contents-uploader .flex { font-size:0; line-height:0; height:20px; }
+#contents { margin-left:-3px; height:400px; overflow:auto; position:relative; }
+#contents .filecnt { float:left; border:1px solid #ccc; cursor:pointer; padding:3px; display:inline; margin:0 0 15px 4px; overflow:hidden; position:relative; width:100px; }
+#contents .selected { border:1px solid #f1af73; background:#f0f0f0; cursor:default; }
+#contents .nm { text-align:center; }
+#contents .nm img { vertical-align:bottom; }
+.no-display-block { display: none; }

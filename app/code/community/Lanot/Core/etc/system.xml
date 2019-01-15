@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <lanot translate="label">
+            <label>Lanot Extensions</label>
+            <sort_order>200</sort_order>
+        </lanot>
+    </tabs>
+    <sections>
+        <lanot_core>
+            <class>separator-top</class>
+            <label>General</label>
+            <tab>lanot</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>0</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+            <groups>
+
+                <account translate="label">
+                    <label>Lanot Account</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                        <email translate="label comment">
+                            <label>Account Email</label>
+                            <comment>Account Email is requried for getting upgrades and special offers</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </email>
+                    </fields>
+                </account>
+
+                <extensions translate="label">
+                    <label>Lanot Modules</label>
+                    <frontend_model>lanot_core/adminhtml_system_extension</frontend_model>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+                </extensions>
+            </groups>
+        </lanot_core>
+    </sections>
+</config>

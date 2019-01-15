@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config>
+
+    <menu>
+        <lanot translate="title">
+            <title>Lanot</title>
+            <sort_order>65</sort_order>
+            <children>
+                <lanot_filemanager translate="title" module="lanot_filemanager">
+                    <title>File Manager</title>
+                    <action>lanot_filemanager/adminhtml_media</action>
+                    <sort_order>30</sort_order>
+                </lanot_filemanager>
+            </children>
+        </lanot>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+
+                    <lanot>
+                        <title>Lanot</title>
+                        <sort_order>65</sort_order>
+                        <children>                                        
+                            <lanot_filemanager translate="title" module="lanot_filemanager">
+                                <title>File Manager</title>
+                                <sort_order>85</sort_order>
+                            </lanot_filemanager>
+                        </children>
+                    </lanot>
+
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <lanot_filemanager translate="title" module="lanot_filemanager">
+                                        <title>Lanot File Manager Settings</title>
+                                    </lanot_filemanager>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+
+                </children>                      
+            </admin>
+        </resources>
+    </acl>
+
+</config>
