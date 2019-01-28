@@ -1,9 +1,12 @@
 <?php
 /**
+ * Private Entrepreneur Anatolii Lehkyi (aka Lanot)
+ *
  * @category    Lanot
- * @package     Lanot_Core
- * @copyright   Copyright (c) 2012 Lanot
- * @license     http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @package     Lanot_FileManager
+ * @copyright   Copyright (c) 2010 Anatolii Lehkyi
+ * @license     http://opensource.org/licenses/osl-3.0.php
+ * @link        http://www.lanot.biz/
  */
 require_once('Mage/Adminhtml/controllers/System/ConfigController.php');
 
